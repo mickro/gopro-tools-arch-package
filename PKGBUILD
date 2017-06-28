@@ -1,35 +1,16 @@
-# Maintainer: Your Name <youremail@domain.com>
-pkgname=NAME
-pkgver=VERSION
+# Maintainer: Mickael Foucaux <mickael.foucaux@gmail.com>
+pkgname=gopro-tools
+pkgver=1
 pkgrel=1
-pkgdesc=""
-arch=()
-url=""
-license=('GPL')
-groups=()
-depends=()
-makedepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-install=
-changelog=
-source=($pkgname-$pkgver.tar.gz)
-noextract=()
-md5sums=() #autofill using updpkgsums
-
-build() {
-  cd "$pkgname-$pkgver"
-
-  ./configure --prefix=/usr
-  make
-}
+pkgdesc="Useful tool set for post production"
+arch=('any')
+url="https://github.com/KonradIT/gopro-linux"
+license=('GPL3')
+groups=('gopro')
+depends=('mencoder' 'ffmpeg' 'imagemagick')
+source=('https://raw.githubusercontent.com/KonradIT/gopro-linux/master/gopro')
+md5sums=('9b056dccbe56c509ddfa1e673c584fad')
 
 package() {
-  cd "$pkgname-$pkgver"
-
-  make DESTDIR="$pkgdir/" install
+  install -D -m755 $srcdir/gopro $pkgdir/usr/bin/gopro
 }

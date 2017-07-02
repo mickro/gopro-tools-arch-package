@@ -2,7 +2,7 @@
 pkgname=gopro-tools-git
 pkgver=1.0.r0.g5c6bd4e
 pkgrel=1
-pkgdesc="Useful tool set for post production"
+pkgdesc="Tools for post production with GoPro cameras"
 arch=('any')
 url="https://github.com/KonradIT/gopro-linux"
 license=('GPL3')
